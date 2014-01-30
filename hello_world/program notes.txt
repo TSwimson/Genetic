@@ -1,0 +1,23 @@
+Create a random population
+repeate while target isnt reached
+	Assign each organism a fitness level
+	crossover the organisms proportianetly to the fitness levels
+	introduce mutation
+return most fit organism
+
+
+class Organism(target, chromosome)
+	@@create a hash of letters A..Z + " " => 0..27
+	-chromosome #array consisting of target.length #'s 0..27
+	-fitness #how close the organism is to the goal
+	*calculate_fitness # the sum of the abs of the difference of each element of the target array and the chromosome array
+	*random_starting_chromosome
+	*mutate
+
+
+class Population(target)
+	@@create a hash of letters A..Z + " " => 0..27
+	-gen_size
+	-target = target.split"".map
+	-gen[]
+	--next_gen[]
