@@ -20,7 +20,7 @@ class Population
 	def start
 		r = calculate_fitness
 		return r if r != 0
-		for i in (0..200)
+		for i in (0..500)
 			generate_next
 			r = calculate_fitness
 			return r if r != 0
