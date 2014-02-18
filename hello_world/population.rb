@@ -31,7 +31,7 @@ class Population
   # private
 
   def generate_initial(pop_size)
-    0..pop_size.each do |i|
+    (0..pop_size).each do |i|
       @gen << Organism.new(@target)
     end
   end
@@ -40,7 +40,7 @@ class Population
     @gen.each { |e| return e if e.update == 'done' }
     total_fit = @gen.reduce(0.0) { |a, e| a + e.fitness }
     @gen.each { |o| o.normalized_fit = o.fitness.to_f / total_fit.to_f }
-    @gen.reduce(0.0) { |a, e| a.normalized_fit += e }
+    @gen.reduce(0.0) { |a, e| e.normalized_fit += a }
     0
   end
 
